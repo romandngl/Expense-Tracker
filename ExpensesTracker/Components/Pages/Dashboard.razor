@@ -1,0 +1,166 @@
+﻿@page "/dashboard"
+@using ExpensesTracker.Services
+@using ExpensesTracker.Models
+@inject AuthenticationStateService authStateService
+@inject NavigationManager navigationManager
+
+<div class="p-6">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">Welcome,  @authStateService.GetAuthenticatedUser().Name!</h1>
+        <div class="user-profile">
+            <span class="user-avatar"></span>
+            <span class="user-name">User</span>
+            <span class="user-username">username</span>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label">Total Amount</div>
+            <div class="stat-value">Rs 20000</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Inflows</div>
+            <div class="stat-value">Rs 30000</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Outflows</div>
+            <div class="stat-value">30000</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Debts</div>
+            <div class="stat-value">Rs 20000</div>
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="money-flow-chart">
+            <h2>Money Flow</h2>
+            <!--  chart component  -->
+        </div>
+
+        <div class="right-panel">
+            <div class="top-transactions">
+                <h2>Recent Transaction</h2>
+                <table class="transaction-table">
+                    <tr class="inflow">
+                        <td>Salary</td>
+                        <td>20000</td>
+                    </tr>
+                    <tr class="outflow">
+                        <td>Rent</td>
+                        <td>20000</td>
+                    </tr>
+                    <tr class="outflow">
+                        <td>Food</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr class="inflow">
+                        <td>Freelancing</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr class="outflow">
+                        <td>Clothes</td>
+                        <td>5000</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="pending-debts">
+                <h2>Pending Debts</h2>
+                <!-- Add pending debts content -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .stat-label {
+        color: #64748b;
+        font-size: 0.875rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 0.25rem;
+    }
+
+    .dashboard-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    .money-flow-chart, .top-transactions, .pending-debts {
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .transaction-table {
+        width: 100%;
+    }
+
+    .transaction-table tr {
+        padding: 0.5rem;
+    }
+
+    .transaction-table tr.inflow {
+        background-color: #dcfce7;
+    }
+
+    .transaction-table tr.outflow {
+        background-color: #fee2e2;
+    }
+
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f1f5f9;
+        border-radius: 9999px;
+    }
+
+    .user-avatar {
+        width: 2rem;
+        height: 2rem;
+        background-color: #94a3b8;
+        border-radius: 9999px;
+    }
+
+    .user-username {
+        color: #94a3b8;
+    }
+</style>
+
+@code {
+    // Add your component logic here
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch data from your service
+        await base.OnInitializedAsync();
+    }
+}

@@ -1,0 +1,25 @@
+﻿@inherits LayoutComponentBase
+@using ExpensesTracker.Services
+@inject AuthenticationStateService authStateService
+
+
+<div class="main-layout">
+    <NavMenu />
+    <main class="content">
+        @Body
+    </main>
+</div>
+
+<style>
+    .main-layout {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    .content {
+        flex-grow: 1;
+        margin-left: 200px; /* Same as nav-container width */
+        padding: 1rem;
+        background-color: #ffffff;
+    }
+</style>

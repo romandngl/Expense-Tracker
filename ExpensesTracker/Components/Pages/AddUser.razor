@@ -1,0 +1,227 @@
+﻿@page "/add-user"
+@using ExpensesTracker.Components.Layout
+@using ExpensesTracker.Models
+@using ExpensesTracker.Services
+@inject IUserService userService
+@inject NavigationManager navigationManager
+@layout NoneLayout
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        padding: 20px;
+    }
+
+    .signup-section {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .image-section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 40px;
+    }
+
+    .signup-form {
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #666;
+        background-color: white;
+    }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #6c63ff;
+        }
+
+    .signup-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+        .signup-button:hover {
+            background-color: #5b54d6;
+        }
+
+    .login-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+
+        .login-text a {
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+</style>
+
+
+<div class="container">
+    <div class="signup-section">
+        <img src="logo.png" alt="Expenses Logo" class="logo">
+        <div class="signup-form">
+            <h1>Sign Up</h1>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" @bind="newUser.Name" id="name" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="eamil" @bind="newUser.Email" id="email" placeholder="Enter your Email Address">
+            </div>
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" @bind="newUser.Password" id="password" placeholder="Must be 8 characters">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" @bind-value="newUser.ConfirmPassword" id="confirm-password" placeholder="Confirm password">
+            </div>
+            <div class="form-group">
+                <label for="currency">Currency Type</label>
+                <select id="currency" @bind="newUser.CurrencyType" placeholder="Select your preferred currency type">
+                    <option value="" disabled selected>Select your preferred currency type</option>
+                    <option value="NRS">NRS - Nepali Rupee</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                </select>
+            </div>
+            <button type="button" @onclick="AddNewUser" class="signup-button">
+
+                Sign up
+            </button>   `<a href="#"></a>       ``
+            <p class="login-text">Have an account? <a href="/">Log in</a></p>
+        </div>
+    </div>
+    <div class="image-section">
+        <img src="expense.png" alt="Sign up illustration">
+    </div>
+</div>
+@if (errorMessage != null)
+{
+    <p class="error-message">@errorMessage</p>
+}
+
+
+
+@if (retrievedUser != null)
+{
+    <h4>User Details:</h4>
+    <p><strong>Name:</strong> @retrievedUser.Name</p>
+    <p><strong>Email:</strong> @retrievedUser.Email</p>
+}
+
+@code {
+    private User newUser = new User(); //obj created for User Class
+    private string errorMessage;
+
+    // New field for searching user
+    private String searchUserEmail;
+
+    // Field to hold retrieved user information
+    private User retrievedUser;
+
+    private async Task AddNewUser()
+    {
+        try
+        {
+            var existingUsers = await userService.LoadUsersAsync();
+            // condition chek
+
+
+            await userService.SaveUserAsync(newUser);
+            // Reset the new user object after saving.
+            newUser = new User();
+            errorMessage = null; // Clear any previous error messages
+            navigationManager.NavigateTo("/");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred while adding the user: {ex.Message}";
+            Console.WriteLine(errorMessage); // Log for debugging
+        }
+    }
+
+    private async Task GetUserInfo()
+    {
+        try
+        {
+            var users = await userService.LoadUsersAsync();
+            retrievedUser = users.FirstOrDefault(u => u.Email == searchUserEmail);
+
+            if (retrievedUser == null)
+            {
+                errorMessage = "No user found with this ID.";
+            }
+            else
+            {
+                errorMessage = null; // Clear any previous error messages
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred while retrieving the user: {ex.Message}";
+            Console.WriteLine(errorMessage); // Log for debugging
+        }
+    }
+}

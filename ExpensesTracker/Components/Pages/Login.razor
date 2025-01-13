@@ -1,0 +1,263 @@
+﻿@page "/"
+@using ExpensesTracker.Components.Layout
+@using ExpensesTracker.Services
+@inject IUserService userService
+@inject NavigationManager navigationManager
+@inject AuthenticationStateService authStateService
+@layout NoneLayout
+
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        padding: 20px;
+    }
+
+    .login-section {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .image-section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 40px;
+    }
+
+    .login-form {
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+        input:focus {
+            outline: none;
+            border-color: #6c63ff;
+        }
+
+    .forgot-password {
+        display: block;
+        text-align: right;
+        color: #6c63ff;
+        text-decoration: none;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .login-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+        .login-button:hover {
+            background-color: #5b54d6;
+        }
+
+    .signup-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+
+        .signup-text a {
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+</style>
+
+
+<div class="container">
+    <div class="login-section">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="login-form">
+            <h1>Login</h1>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" @bind="email" id="email" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" @bind="password" id=" password" placeholder="Enter your password">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button class="login-button" type="button" @onclick="Submit">
+                <span class="@_spinnerClass" role="status" aria-hidden="true"></span>
+                Login
+            </button>
+            <p class="signup-text">Don't have an account? <NavLink class="nav-link" href="/add-user"> <a>Sign Up</a></NavLink></p>
+        </div>
+    </div>
+    <div class="image-section">
+        <img src="expense.png" alt="Login illustration">
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="error-message">@errorMessage</p>
+}
+
+@code {
+    private string email;
+
+    private string password;
+
+    private string errorMessage;
+
+    private string _spinnerClass = "";
+
+
+
+    private async Task Submit()
+
+    {
+
+        _spinnerClass = "spinner-border spinner-border-sm";  // Show spinner
+
+        StateHasChanged();  // Ensure UI updates immediately
+
+
+
+        await Task.Delay(500);  // Simulating delay (for demo purposes)
+
+
+
+        await LoginUser();  // Call the login method
+
+
+
+        _spinnerClass = "";  // Hide spinner
+
+        StateHasChanged();  // Update UI again after login
+
+    }
+
+
+
+    private async Task LoginUser()
+
+    {
+
+        try
+
+        {
+
+            var users = await userService.LoadUsersAsync();
+
+            var user = users.FirstOrDefault(u => u.Email == email && u.Password == HashPassword(password));
+
+
+
+            if (user != null)
+
+            {
+
+                // Set the authenticated user in state management
+
+                authStateService.SetAuthenticatedUser(user);
+
+
+
+                // Redirect to the dashboard or todo page
+
+                navigationManager.NavigateTo("/dashboard");
+
+            }
+
+            else
+
+            {
+
+                errorMessage = "Invalid username or password.";
+
+            }
+
+        }
+
+        catch (Exception ex)
+
+        {
+
+            errorMessage = $"An error occurred during login: {ex.Message}";
+
+        }
+
+    }
+
+
+
+    private string HashPassword(string password)
+
+    {
+
+        using (var sha256 = System.Security.Cryptography.SHA256.Create())
+
+        {
+
+            var bytes = System.Text.Encoding.UTF8.GetBytes(password);
+
+            var hash = sha256.ComputeHash(bytes);
+
+            return Convert.ToBase64String(hash);
+
+        }
+
+    }
+}
