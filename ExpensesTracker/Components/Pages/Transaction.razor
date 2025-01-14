@@ -1,0 +1,47 @@
+﻿@page "/transactions"
+@inject TransactionService transactionService
+@inject NavigationManager NavigationManager
+
+
+<h1>Transactions History</h1>
+<button @onclick="NavigateToAddTransaction">Add new</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>DATE</th>
+            <th>TITLE</th>
+            <th>AMOUNT</th>
+            <th>TYPE</th>
+            <th>TAGS</th>
+            <th>NOTES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in filteredTransactions)
+        {
+            <tr>
+                <td>@transaction.Date.ToShortDateString()</td>
+                <td>@transaction.Title</td>
+                <td>@transaction.Amount.ToString("C")</td>
+                <td>@transaction.Type</td>
+                <td>@string.Join(", ", transaction.Tags)</td>
+                <td>@transaction.Notes</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<TransactionItems> filteredTransactions;
+
+    protected override void OnInitialized()
+    {
+        filteredTransactions = transactionService.GetTransactions();
+    }
+
+    private void NavigateToAddTransaction()
+    {
+        NavigationManager.NavigateTo("/add-transaction");
+    }
+}

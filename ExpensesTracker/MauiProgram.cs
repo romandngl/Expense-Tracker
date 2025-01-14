@@ -1,7 +1,5 @@
 ﻿using ExpensesTracker.Services;
 using Microsoft.Extensions.Logging;
-using ExpensesTracker.Services;
-using ExpensesTracker;
 
 namespace ExpensesTracker
 {
@@ -22,6 +20,7 @@ namespace ExpensesTracker
             //registering User Services
             builder.Services.AddSingleton<IUserService, UserService>();
             builder.Services.AddSingleton<AuthenticationStateService>();
+            builder.Services.AddSingleton<TransactionService>();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

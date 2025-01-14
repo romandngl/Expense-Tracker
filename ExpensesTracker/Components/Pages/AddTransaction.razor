@@ -1,0 +1,53 @@
+@page "/add-transaction"
+@inject TransactionService transactionService
+@inject NavigationManager NavigationManager
+
+<h1>Add Transaction</h1>
+
+<EditForm Model="newTransaction" OnValidSubmit="HandleValidSubmit">
+    <div>
+        <label>Date:</label>
+        <InputDate @bind-Value="newTransaction.Date" />
+    </div>
+    <div>
+        <label>Title:</label>
+        <InputText @bind-Value="newTransaction.Title" />
+    </div>
+    <div>
+        <label>Amount:</label>
+        <InputNumber @bind-Value="newTransaction.Amount" />
+    </div>
+    <div>
+        <label>Type:</label>
+        <InputText @bind-Value="newTransaction.Type" />
+    </div>
+    <div>
+        <label>Tags (comma-separated):</label>
+        <InputText @bind-Value="tagsInput" />
+    </div>
+    <div>
+        <label>Notes:</label>
+        <InputText @bind-Value="newTransaction.Notes" />
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    private TransactionItems newTransaction = new TransactionItems { Date = DateTime.Now };
+
+    private string tagsInput;
+
+
+
+    private void HandleValidSubmit()
+
+    {
+
+        newTransaction.Tags = tagsInput?.Split(',').Select(t => t.Trim()).ToList() ?? new List<string>();
+
+        transactionService.AddTransaction(newTransaction);
+
+        NavigationManager.NavigateTo("/transactions");
+
+    }
+}
