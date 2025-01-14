@@ -30,7 +30,7 @@
 
     <div class="log">
         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-            <span class="@(IsActive("") ? "active" : "")">Dashboard</span>
+            <span class="@(IsActive("") ? "active" : "")">Log Out</span>
         </NavLink>
     </div>
 </div>
@@ -86,13 +86,7 @@
             background-color: #e0e7ff;
         }
 
-        .nav-link .active {
-            background-color: #818cf8;
-            color: white;
-            font-weight: 500;
-            border-radius: 0.375rem;
-            padding: 0.5rem 1rem;
-        }
+       
 
     .nav-footer {
         margin-top: auto;
@@ -106,6 +100,10 @@
         .logout:hover {
             background-color: #fee2e2;
         }
+
+    .log{
+        color: red;
+    }
 </style>
 
 @code {
