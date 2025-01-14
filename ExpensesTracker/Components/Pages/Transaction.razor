@@ -3,10 +3,24 @@
 @inject NavigationManager NavigationManager
 
 
-<h1>Transactions History</h1>
-<button @onclick="NavigateToAddTransaction">Add new</button>
+<h1 class="transactions-title">Transactions History</h1>
 
-<table>
+<div class="filter-container">
+    <label for="start-date">Date Range:</label>
+    <input type="date" id="start-date" class="date-input">
+    <input type="date" id="end-date" class="date-input">
+
+    <select id="type-filter" class="type-filter">
+        <option value="all">All types</option>
+        <option value="credit">Credit</option>
+        <option value="debit">Debit</option>
+    </select>
+
+    <input type="text" id="search" placeholder="Search" class="search-input">
+    <button class="add-button" @onclick="NavigateToAddTransaction">Add new</button>
+</div>
+
+<table class="transactions-table">
     <thead>
         <tr>
             <th>DATE</th>
@@ -23,14 +37,95 @@
             <tr>
                 <td>@transaction.Date.ToShortDateString()</td>
                 <td>@transaction.Title</td>
-                <td>@transaction.Amount.ToString("C")</td>
-                <td>@transaction.Type</td>
+                <td class="amount">@transaction.Amount.ToString("C")</td>
+                <td class="@transaction.Type.ToLower()">@transaction.Type</td>
                 <td>@string.Join(", ", transaction.Tags)</td>
                 <td>@transaction.Notes</td>
             </tr>
         }
     </tbody>
 </table>
+
+<style>
+    .transactions-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+    }
+
+    .date-input,
+    .type-filter,
+    .search-input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .add-button {
+        background-color: #6c63ff;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .add-button:hover {
+            background-color: #574bff;
+        }
+
+    .transactions-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+
+        .transactions-table th,
+        .transactions-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .transactions-table th {
+            background-color: #6c63ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .transactions-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .transactions-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .amount {
+        font-weight: bold;
+    }
+
+    .credit {
+        color: green;
+        font-weight: bold;
+    }
+
+    .debit {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
 
 @code {
     private List<TransactionItems> filteredTransactions;

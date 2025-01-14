@@ -2,35 +2,132 @@
 @inject TransactionService transactionService
 @inject NavigationManager NavigationManager
 
-<h1>Add Transaction</h1>
+<h1 class="add-transaction-title">Add Transaction</h1>
 
-<EditForm Model="newTransaction" OnValidSubmit="HandleValidSubmit">
-    <div>
-        <label>Date:</label>
-        <InputDate @bind-Value="newTransaction.Date" />
+<div class="form-container">
+    <div class="transaction-type">
+        <label>Transaction Type</label>
+        <div>
+            <input type="radio" @bind="newTransaction.IsDebit" /> Debit
+            <input type="radio" @bind="newTransaction.IsCredit" /> Credit
+        </div>
     </div>
-    <div>
-        <label>Title:</label>
-        <InputText @bind-Value="newTransaction.Title" />
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" type="text" @bind="newTransaction.Title" class="input-field" />
     </div>
-    <div>
-        <label>Amount:</label>
-        <InputNumber @bind-Value="newTransaction.Amount" />
+
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input id="date" type="date" @bind="newTransaction.Date" class="input-field" />
     </div>
-    <div>
-        <label>Type:</label>
-        <InputText @bind-Value="newTransaction.Type" />
+
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" @bind="newTransaction.Amount" class="input-field" />
     </div>
-    <div>
-        <label>Tags (comma-separated):</label>
-        <InputText @bind-Value="tagsInput" />
+
+    <div class="form-group">
+        <label for="tags">Tags (comma-separated)</label>
+        <input id="tags" type="text" @bind="tagsInput" class="input-field" />
     </div>
-    <div>
-        <label>Notes:</label>
-        <InputText @bind-Value="newTransaction.Notes" />
+
+    <div class="form-group">
+        <label for="remarks">Remarks</label>
+        <textarea id="remarks" @bind="newTransaction.Notes" class="textarea-field"></textarea>
     </div>
-    <button type="submit">Submit</button>
-</EditForm>
+
+    <div class="button-group">
+        <button class="save-button" @onclick="SaveTransaction">Save</button>
+        <button class="cancel-button" @onclick="NavigateToTransactions">Cancel</button>
+    </div>
+</div>
+
+<style>
+    .add-transaction-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+
+    .transaction-type {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+        .transaction-type div {
+            display: flex;
+            gap: 1rem;
+        }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .input-field,
+    .textarea-field {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .textarea-field {
+        height: 100px;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .save-button {
+        background-color: #6c63ff;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .save-button:hover {
+            background-color: #574bff;
+        }
+
+    .cancel-button {
+        background-color: #fff;
+        color: #6c63ff;
+        border: 1px solid #6c63ff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .cancel-button:hover {
+            background-color: #f9f9f9;
+        }
+</style>
 
 @code {
     private TransactionItems newTransaction = new TransactionItems { Date = DateTime.Now };
@@ -39,13 +136,37 @@
 
 
 
-    private void HandleValidSubmit()
+    // Save the new transaction
+
+    private void SaveTransaction()
 
     {
 
+        // Parse tags from input
+
         newTransaction.Tags = tagsInput?.Split(',').Select(t => t.Trim()).ToList() ?? new List<string>();
 
+
+
+        // Add the transaction to the service
+
         transactionService.AddTransaction(newTransaction);
+
+
+
+        // Redirect to the transactions page
+
+        NavigationManager.NavigateTo("/transactions");
+
+    }
+
+
+
+    // Navigate to the transactions page without saving
+
+    private void NavigateToTransactions()
+
+    {
 
         NavigationManager.NavigateTo("/transactions");
 
