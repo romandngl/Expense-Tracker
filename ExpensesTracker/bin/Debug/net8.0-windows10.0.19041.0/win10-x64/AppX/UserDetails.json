@@ -5,5 +5,12 @@
     "Password": "XcB8yOIjBdU8xDyTB1hQai9/5T8QELmnbQDUo9eI1hQ=",
     "ConfirmPassword": "Rom@ndngl121",
     "CurrencyType": "NRS"
+  },
+  {
+    "Name": "Ram",
+    "Email": "ram@gmail.com",
+    "Password": "tAqzIj3uDTbVOv63dyf36ktjFONqs4KtVwfooLRkPG8=",
+    "ConfirmPassword": "Ram12345678",
+    "CurrencyType": "NRS"
   }
 ]

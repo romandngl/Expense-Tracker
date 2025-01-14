@@ -12,8 +12,8 @@
 
     <select id="type-filter" class="type-filter">
         <option value="all">All types</option>
-        <option value="credit">Credit</option>
-        <option value="debit">Debit</option>
+        <option value="credit">Income</option>
+        <option value="debit">Expense</option>
     </select>
 
     <input type="text" id="search" placeholder="Search" class="search-input">
@@ -39,7 +39,7 @@
                 <td>@transaction.Title</td>
                 <td class="amount">@transaction.Amount.ToString("C")</td>
                 <td class="@transaction.Type.ToLower()">@transaction.Type</td>
-                <td>@string.Join(", ", transaction.Tags)</td>
+                <td>@string.Join(", ", transaction.Category)</td>
                 <td>@transaction.Notes</td>
             </tr>
         }
@@ -116,7 +116,7 @@
     }
 
     .credit {
-        color: green;
+        color: lightgreen;
         font-weight: bold;
     }
 

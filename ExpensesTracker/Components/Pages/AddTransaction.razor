@@ -2,74 +2,79 @@
 @inject TransactionService transactionService
 @inject NavigationManager NavigationManager
 
-<h1 class="add-transaction-title">Add Transaction</h1>
+<h1 class="add-transaction-title">Add Transactions</h1>
 
-<div class="form-container">
-    <div class="transaction-type">
+<form class="form-container">
+    <!-- Transaction Type -->
+    <div class="form-group transaction-type-group">
         <label>Transaction Type</label>
-        <div>
-            <input type="radio" @bind="newTransaction.IsDebit" /> Debit
-            <input type="radio" @bind="newTransaction.IsCredit" /> Credit
+        <div class="transaction-type">
+            <label>
+                <input type="checkbox" @bind="newTransaction.IsDebit" /> Debit
+            </label>
+            <label>
+                <input type="checkbox" @bind="newTransaction.IsCredit"  /> Credit
+            </label>
         </div>
     </div>
 
+    <!-- Title -->
     <div class="form-group">
         <label for="title">Title</label>
         <input id="title" type="text" @bind="newTransaction.Title" class="input-field" />
     </div>
 
+    <!-- Date -->
     <div class="form-group">
         <label for="date">Date</label>
         <input id="date" type="date" @bind="newTransaction.Date" class="input-field" />
     </div>
 
+    <!-- Amount -->
     <div class="form-group">
         <label for="amount">Amount</label>
         <input id="amount" type="number" @bind="newTransaction.Amount" class="input-field" />
     </div>
 
+    <!-- Category -->
     <div class="form-group">
-        <label for="tags">Tags (comma-separated)</label>
-        <input id="tags" type="text" @bind="tagsInput" class="input-field" />
+        <label for="category">Category</label>
+        <select id="category" @bind="newTransaction.Category" class="dropdown">
+            <option>Rent</option>
+            <option>Utilities</option>
+            <option>Food</option>
+            <option>Transportation</option>
+        </select>
     </div>
 
+    <!-- Remarks -->
     <div class="form-group">
         <label for="remarks">Remarks</label>
         <textarea id="remarks" @bind="newTransaction.Notes" class="textarea-field"></textarea>
     </div>
 
+    <!-- Buttons -->
     <div class="button-group">
-        <button class="save-button" @onclick="SaveTransaction">Save</button>
+        <button type="button" class="save-button" @onclick="SaveTransaction">Save</button>
         <button class="cancel-button" @onclick="NavigateToTransactions">Cancel</button>
     </div>
-</div>
+</form>
 
 <style>
     .add-transaction-title {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         text-align: center;
     }
 
     .form-container {
-        display: flex;
-        flex-direction: column;
-        max-width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
         margin: 0 auto;
-        gap: 1rem;
     }
-
-    .transaction-type {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-        .transaction-type div {
-            display: flex;
-            gap: 1rem;
-        }
 
     .form-group {
         display: flex;
@@ -77,11 +82,25 @@
         gap: 0.5rem;
     }
 
+    .transaction-type-group {
+        grid-column: span 2;
+    }
+
+    .transaction-type {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .transaction-type label {
+        font-weight: normal;
+    }
+
     label {
         font-weight: bold;
     }
 
     .input-field,
+    .dropdown,
     .textarea-field {
         padding: 0.5rem;
         border: 1px solid #ccc;
@@ -94,81 +113,49 @@
     }
 
     .button-group {
+        grid-column: span 2;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .save-button {
         background-color: #6c63ff;
-        color: #fff;
+        color: white;
         border: none;
         padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
     }
 
-        .save-button:hover {
-            background-color: #574bff;
-        }
-
     .cancel-button {
-        background-color: #fff;
+        background-color: white;
         color: #6c63ff;
         border: 1px solid #6c63ff;
         padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
     }
-
-        .cancel-button:hover {
-            background-color: #f9f9f9;
-        }
 </style>
 
 @code {
     private TransactionItems newTransaction = new TransactionItems { Date = DateTime.Now };
 
-    private string tagsInput;
-
-
-
-    // Save the new transaction
 
     private void SaveTransaction()
-
     {
-
-        // Parse tags from input
-
-        newTransaction.Tags = tagsInput?.Split(',').Select(t => t.Trim()).ToList() ?? new List<string>();
-
-
 
         // Add the transaction to the service
-
         transactionService.AddTransaction(newTransaction);
 
-
-
         // Redirect to the transactions page
-
         NavigationManager.NavigateTo("/transactions");
-
     }
 
-
-
-    // Navigate to the transactions page without saving
-
     private void NavigateToTransactions()
-
     {
-
         NavigationManager.NavigateTo("/transactions");
-
     }
 }
