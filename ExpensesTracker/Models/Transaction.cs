@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 public class TransactionItems
 {
@@ -26,8 +27,12 @@ public class TransactionItems
         }
     }
 
+    [Required(ErrorMessage = "Title is required.")]
     public string Title { get; set; }
     public DateTime Date { get; set; }
+
+    [Required(ErrorMessage = "Amount is required.")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "Amount must be greater than zero.")]
     public decimal Amount { get; set; }
     public string Category { get; set; }
     public string Notes { get; set; }
