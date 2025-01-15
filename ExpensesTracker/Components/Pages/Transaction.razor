@@ -129,10 +129,11 @@
 
 @code {
     private List<TransactionItems> filteredTransactions;
+    private string currentUserEmail = "user@example.com";
 
     protected override void OnInitialized()
     {
-        filteredTransactions = transactionService.GetTransactions();
+        filteredTransactions = transactionService.GetUserTransactions(currentUserEmail);
     }
 
     private void NavigateToAddTransaction()

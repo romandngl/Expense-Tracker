@@ -153,13 +153,14 @@
 
 @code {
     private TransactionItems newTransaction = new TransactionItems { Date = DateTime.Now };
+    private string currentUserEmail = "user@example.com";
 
 
     private void SaveTransaction()
     {
 
         // Add the transaction to the service
-        transactionService.AddTransaction(newTransaction);
+        transactionService.AddTransaction(currentUserEmail, newTransaction);
 
         // Redirect to the transactions page
         NavigationManager.NavigateTo("/transactions");

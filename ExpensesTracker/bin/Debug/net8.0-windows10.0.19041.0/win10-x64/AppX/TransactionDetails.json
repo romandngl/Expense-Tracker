@@ -1,0 +1,18 @@
+[
+  {
+    "Email": "user@example.com",
+    "Transactions": [
+      {
+        "Id": 1,
+        "IsDebit": true,
+        "IsCredit": false,
+        "Title": "Lunch",
+        "Date": "2025-01-15T15:56:41.8406097+05:45",
+        "Amount": 10,
+        "Category": "Food",
+        "Notes": "daad",
+        "Type": "Debit"
+      }
+    ]
+  }
+]
