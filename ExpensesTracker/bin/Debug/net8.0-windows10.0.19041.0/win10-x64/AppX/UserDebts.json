@@ -1,22 +1,32 @@
 [
   {
-    "Id": 0,
-    "Title": "House",
-    "Amount": 500000,
-    "Category": "Loan",
-    "Source": "Bank",
-    "Remarks": "Property Loan",
-    "Date": "2025-01-16T01:46:39.1575081+05:45",
-    "DueDate": "2025-02-05T00:00:00"
+    "Email": "ram@gmail.com",
+    "Debts": [
+      {
+        "Id": 0,
+        "Title": "House",
+        "Amount": 1000000,
+        "Category": "Loan",
+        "Source": "Bank",
+        "Remarks": "Property Loan",
+        "Date": "2025-01-12T00:00:00",
+        "DueDate": "2025-02-17T00:00:00"
+      }
+    ]
   },
   {
-    "Id": 0,
-    "Title": "Car Loan",
-    "Amount": 500000,
-    "Category": "Credit Card",
-    "Source": "Bank",
-    "Remarks": "Car",
-    "Date": "2025-01-07T00:00:00",
-    "DueDate": "2025-02-19T00:00:00"
+    "Email": "romandngl121@gmail.com",
+    "Debts": [
+      {
+        "Id": 0,
+        "Title": "Land",
+        "Amount": 2000000,
+        "Category": "Loan",
+        "Source": "Bank",
+        "Remarks": "Property",
+        "Date": "2025-01-14T00:00:00",
+        "DueDate": "2025-03-10T00:00:00"
+      }
+    ]
   }
 ]
