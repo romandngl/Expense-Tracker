@@ -1,256 +1,193 @@
 ﻿@page "/debt"
-@using ExpensesTracker.Services
 @inject DebtService debtService
 @inject NavigationManager NavigationManager
-@inject AuthenticationStateService authStateService
 
-<h1 class="debt-title">Debt Records</h1>
+<h1 class="debts-title">Debts</h1>
 
-<div class="filter-container">
-    <div class="filter-group">
-        <label for="start-date">Date Range:</label>
-        <input type="date" id="start-date" class="date-input" @bind="startDate">
-        <input type="date" id="end-date" class="date-input" @bind="endDate">
-    </div>
-
-    <div class="filter-group">
-        <label for="search">Search:</label>
-        <input type="text" id="search" class="search-input" placeholder="Search by title" @bind="searchQuery">
-    </div>
-
-    <div class="filter-group">
-        <label for="sort-filter">Sort By Date:</label>
-        <select id="sort-filter" class="dropdown" @bind="sortOrder">
-            <option value="latest">Latest</option>
-            <option value="oldest">Oldest</option>
-        </select>
-    </div>
-
-    <div class="filter-buttons">
-        <button class="search-button" @onclick="ApplyFiltersAndSorts">Search</button>
-        <button class="reload-button" @onclick="ReloadPage">Reload</button>
-        <button class="add-button" @onclick="NavigateToAddDebt">Add New</button>
-    </div>
-</div>
-
-<table class="debt-table">
-    <thead>
-        <tr>
-            <th>DATE</th>
-            <th>TITLE</th>
-            <th>AMOUNT</th>
-            <th>ACTIONS</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (filteredDebts.Any())
-        {
-            @foreach (var debt in filteredDebts)
-            {
+@if (debts == null || debts.Count == 0)
+{
+    <p class="no-debts-message">No debts found. Add a new debt.</p>
+}
+else
+{
+    <div class="table-container">
+        <table class="debts-table">
+            <thead>
                 <tr>
-                    <td>@debt.Date.ToShortDateString()</td>
-                    <td>@debt.Title</td>
-                    <td class="amount">@debt.Amount.ToString("C")</td>
-                    <td>
-                        <button class="details-button" @onclick="() => ViewDebtDetails(debt.Id)">Details</button>
-                        <button class="clear-button">Clear</button>
-                    </td>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Actions</th>
                 </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4" class="no-records">No debts found.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+                @foreach (var debt in debts)
+                {
+                    <tr>
+                        <td>@debt.Title</td>
+                        <td>@debt.Amount</td>
+                        <td>@debt.Category</td>
+                        <td>
+                            <button class="details-button" @onclick="() => ShowDetails(debt)">Detail</button>
+                            <button class="clear-button" @onclick="() => ClearDebt(debt)">Clear</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (selectedDebt != null)
+    {
+        <div class="debt-details">
+            <h3>Debt Details</h3>
+            <p><strong>Title:</strong> @selectedDebt.Title</p>
+            <p><strong>Amount:</strong> @selectedDebt.Amount</p>
+            <p><strong>Category:</strong> @selectedDebt.Category</p>
+            <p><strong>Source:</strong> @selectedDebt.Source</p>
+            <p><strong>Remarks:</strong> @selectedDebt.Remarks</p>
+            <p><strong>Date:</strong> @selectedDebt.Date.ToShortDateString()</p>
+            <p><strong>Due Date:</strong> @selectedDebt.DueDate.ToShortDateString()</p>
+        </div>
+    }
+}
+
+<button class="add-debt-button" @onclick="NavigateToAddDebt">Add New</button>
 
 <style>
-    .debt-title {
+    /* Title styling */
+    .debts-title {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 1.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Message for no debts */
+    .no-debts-message {
+        font-size: 1.2rem;
+        color: #6c63ff;
         text-align: center;
     }
 
-    .filter-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        gap: 1rem;
-        background-color: #f8f9fa;
+    /* Table styling */
+    .table-container {
+        overflow-x: auto;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    .debts-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .debts-table th,
+        .debts-table td {
+            text-align: left;
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .debts-table th {
+            background-color: #6c63ff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .debts-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+    /* Details section */
+    .debt-details {
+        margin: 2rem auto;
         padding: 1rem;
+        border: 1px solid #ccc;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        max-width: 80%;
     }
 
-    .filter-group {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 200px;
-    }
+        .debt-details h3 {
+            color: #6c63ff;
+            margin-bottom: 1rem;
+        }
 
-    .dropdown, .date-input, .search-input {
-        padding: 0.5rem;
-        border: 1px solid #ddd;
+    /* Button styles */
+    .add-debt-button {
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        font-size: 1rem;
-        margin-top: 0.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        margin: 1rem auto;
+        max-width: 150px;
+        text-align: center;
     }
 
-    .filter-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
+        .add-debt-button:hover {
+            background-color: #5846e8;
+        }
 
-    .search-button, .reload-button, .add-button {
+    .details-button {
         background-color: #6c63ff;
         color: white;
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
+        font-weight: bold;
         cursor: pointer;
-        font-weight: bold;
-        font-size: 1rem;
     }
 
-        .search-button:hover, .reload-button:hover, .add-button:hover {
-            background-color: #574bff;
+        .details-button:hover {
+            background-color: #5846e8;
         }
 
-    .debt-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-        .debt-table th, .debt-table td {
-            border: 1px solid #ddd;
-            padding: 0.75rem;
-            text-align: left;
-        }
-
-        .debt-table th {
-            background-color: #6c63ff;
-            color: white;
-            font-weight: bold;
-        }
-
-        .debt-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .debt-table tr:hover {
-            background-color: #f1f1f1;
-        }
-
-    .amount {
-        font-weight: bold;
-        color: red;
-    }
-
-    .details-button, .clear-button {
-        background-color: #6c63ff;
+    .clear-button {
+        background-color: #ff6c6c;
         color: white;
         border: none;
-        padding: 0.5rem 0.75rem;
+        padding: 0.5rem 1rem;
         border-radius: 4px;
+        font-weight: bold;
         cursor: pointer;
-        font-size: 0.9rem;
     }
 
-        .details-button:hover, .clear-button:hover {
-            background-color: #574bff;
+        .clear-button:hover {
+            background-color: #e85454;
         }
-
-    .no-records {
-        text-align: center;
-        font-style: italic;
-        color: gray;
-    }
 </style>
 
 @code {
-    private List<DebtItems> filteredDebts = new();
-    private List<DebtItems> allDebts = new();
-    private string currentUserEmail;
+    private List<DebtItems> debts;
+    private DebtItems selectedDebt;
 
-    // Filter inputs
-    private DateTime? startDate;
-    private DateTime? endDate;
-    private string sortOrder = "latest";
-    private string searchQuery = string.Empty;
-
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
-
-        if (!string.IsNullOrEmpty(currentUserEmail))
-        {
-            allDebts = debtService.GetUserDebts(currentUserEmail);
-            ReloadPage();
-        }
-        else
-        {
-            NavigationManager.NavigateTo("/login");
-        }
+        debts = debtService.LoadDebts();
     }
 
-    private void ApplyFiltersAndSorts()
+    private void ShowDetails(DebtItems debt)
     {
-        filteredDebts = allDebts;
-
-        // Filter by date range
-        if (startDate.HasValue)
-        {
-            filteredDebts = filteredDebts.Where(d => d.Date >= startDate.Value).ToList();
-        }
-
-        if (endDate.HasValue)
-        {
-            filteredDebts = filteredDebts.Where(d => d.Date <= endDate.Value).ToList();
-        }
-
-        // Search by title
-        if (!string.IsNullOrEmpty(searchQuery))
-        {
-            filteredDebts = filteredDebts.Where(d => d.Title.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        // Sort by date
-        if (sortOrder == "latest")
-        {
-            filteredDebts = filteredDebts.OrderByDescending(d => d.Date).ToList();
-        }
-        else if (sortOrder == "oldest")
-        {
-            filteredDebts = filteredDebts.OrderBy(d => d.Date).ToList();
-        }
+        selectedDebt = debt;
     }
 
-    private void ReloadPage()
+    private void ClearDebt(DebtItems debt)
     {
-        // Reset all filters and load the original list
-        startDate = null;
-        endDate = null;
-        sortOrder = "latest";
-        searchQuery = string.Empty;
-        filteredDebts = allDebts;
+        debtService.RemoveDebt(debt);
+        debts = debtService.LoadDebts(); // Reload the updated list
+        selectedDebt = null; // Clear the selected debt
     }
 
     private void NavigateToAddDebt()
     {
         NavigationManager.NavigateTo("/add-debt");
     }
-
-    private void ViewDebtDetails(int id)
-    {
-        NavigationManager.NavigateTo($"/debt-details/{id}");
-    }
-
-   
 }
