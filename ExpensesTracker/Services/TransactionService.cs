@@ -57,14 +57,71 @@ public class TransactionService
         return userTransaction?.Transactions ?? new List<TransactionItems>();
     }
 
-    // Filter transactions by date and type
-    public List<TransactionItems> FilterTransactions(string email, DateTime startDate, DateTime endDate, string type = null)
+    // Filter transactions by date range, type, and category
+    public List<TransactionItems> FilterTransactions(string email, DateTime? startDate, DateTime? endDate, string type = null, string category = null)
     {
         var userTransactions = GetUserTransactions(email);
 
+        // Apply filters
+        var filteredTransactions = userTransactions.AsQueryable();
+
+        if (startDate.HasValue)
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Date >= startDate.Value);
+        }
+
+        if (endDate.HasValue)
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Date <= endDate.Value);
+        }
+
+        if (!string.IsNullOrEmpty(type) && type != "all")
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Type.Equals(type, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrEmpty(category) && category != "all")
+        {
+            filteredTransactions = filteredTransactions
+                .Where(t => t.Category != null && t.Category.Contains(category, StringComparison.OrdinalIgnoreCase));
+        }
+
+        return filteredTransactions.ToList();
+    }
+
+    // Sort transactions by date (latest or oldest)
+    public List<TransactionItems> SortTransactionsByDate(List<TransactionItems> transactions, bool sortByLatest = true)
+    {
+        return sortByLatest
+            ? transactions.OrderByDescending(t => t.Date).ToList()
+            : transactions.OrderBy(t => t.Date).ToList();
+    }
+
+    // Search transactions by title
+    public List<TransactionItems> SearchTransactionsByTitle(string email, string searchTerm)
+    {
+        var userTransactions = GetUserTransactions(email);
+
+        if (string.IsNullOrEmpty(searchTerm))
+        {
+            return userTransactions;
+        }
+
         return userTransactions
-            .Where(t => t.Date >= startDate && t.Date <= endDate &&
-                        (string.IsNullOrEmpty(type) || t.Type.Equals(type, StringComparison.OrdinalIgnoreCase)))
+            .Where(t => t.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+
+    // Get all unique categories for a user's transactions
+    public List<string> GetTransactionCategories(string email)
+    {
+        var userTransactions = GetUserTransactions(email);
+
+        // Extract unique categories from all transactions
+        return userTransactions
+            .Where(t => !string.IsNullOrEmpty(t.Category)) // Ensure category is not null or empty
+            .Select(t => t.Category)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
     }
 }

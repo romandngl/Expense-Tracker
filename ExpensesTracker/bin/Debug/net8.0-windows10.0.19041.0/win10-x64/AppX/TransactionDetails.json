@@ -1,43 +1,5 @@
 [
   {
-    "Email": "user@example.com",
-    "Transactions": [
-      {
-        "Id": 1,
-        "IsDebit": true,
-        "IsCredit": false,
-        "Title": "Lunch",
-        "Date": "2025-01-15T15:56:41.8406097+05:45",
-        "Amount": 10,
-        "Category": "Food",
-        "Notes": "daad",
-        "Type": "Debit"
-      },
-      {
-        "Id": 2,
-        "IsDebit": true,
-        "IsCredit": false,
-        "Title": "Lunch",
-        "Date": "2025-01-15T17:22:21.7885043+05:45",
-        "Amount": 1000,
-        "Category": "Food",
-        "Notes": null,
-        "Type": "Debit"
-      },
-      {
-        "Id": 3,
-        "IsDebit": false,
-        "IsCredit": true,
-        "Title": "Rent",
-        "Date": "2025-01-15T17:22:58.7978427+05:45",
-        "Amount": 5000,
-        "Category": "Rent",
-        "Notes": null,
-        "Type": "Credit"
-      }
-    ]
-  },
-  {
     "Email": "ram@gmail.com",
     "Transactions": [
       {
@@ -49,6 +11,50 @@
         "Amount": 5000,
         "Category": "Utilities",
         "Notes": "EMKI",
+        "Type": "Debit"
+      },
+      {
+        "Id": 2,
+        "IsDebit": false,
+        "IsCredit": true,
+        "Title": "Salary",
+        "Date": "2025-01-15T20:06:33.7751661+05:45",
+        "Amount": 2000000,
+        "Category": "Utilities",
+        "Notes": "Salary ",
+        "Type": "Credit"
+      },
+      {
+        "Id": 3,
+        "IsDebit": false,
+        "IsCredit": true,
+        "Title": "Interest",
+        "Date": "2025-01-14T00:00:00",
+        "Amount": 5000,
+        "Category": "Utilities",
+        "Notes": "Interest from Fixed deposit",
+        "Type": "Credit"
+      },
+      {
+        "Id": 4,
+        "IsDebit": true,
+        "IsCredit": false,
+        "Title": "Rent",
+        "Date": "2025-01-12T00:00:00",
+        "Amount": 10000,
+        "Category": "Rent",
+        "Notes": "Ghar bhada",
+        "Type": "Debit"
+      },
+      {
+        "Id": 5,
+        "IsDebit": true,
+        "IsCredit": false,
+        "Title": "Fuel",
+        "Date": "2025-01-06T00:00:00",
+        "Amount": 1500,
+        "Category": "Transportation",
+        "Notes": "Petrol",
         "Type": "Debit"
       }
     ]

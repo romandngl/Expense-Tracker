@@ -4,23 +4,53 @@
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateService authStateService
 
-
-
 <h1 class="transactions-title">Transactions History</h1>
 
 <div class="filter-container">
-    <label for="start-date">Date Range:</label>
-    <input type="date" id="start-date" class="date-input">
-    <input type="date" id="end-date" class="date-input">
+    <div class="filter-group">
+        <label for="start-date">Date Range:</label>
+        <input type="date" id="start-date" class="date-input" @bind="startDate">
+        <input type="date" id="end-date" class="date-input" @bind="endDate">
+    </div>
 
-    <select id="type-filter" class="type-filter">
-        <option value="all">All types</option>
-        <option value="credit">Income</option>
-        <option value="debit">Expense</option>
-    </select>
+    <div class="filter-group">
+        <label for="type-filter">Type:</label>
+        <select id="type-filter" class="dropdown" @bind="selectedType">
+            <option value="all">All Types</option>
+            <option value="credit">Income</option>
+            <option value="debit">Expense</option>
+        </select>
+    </div>
 
-    <input type="text" id="search" placeholder="Search" class="search-input">
-    <button class="add-button" @onclick="NavigateToAddTransaction">Add new</button>
+    <div class="filter-group">
+        <label for="category-filter">Category:</label>
+        <select id="category-filter" class="dropdown" @bind="selectedCategory">
+            <option value="all">All Categories</option>
+            @foreach (var category in categories)
+            {
+                <option value="@category">@category</option>
+            }
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="sort-filter">Sort By Date:</label>
+        <select id="sort-filter" class="dropdown" @bind="sortOrder">
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="search">Search:</label>
+        <input type="text" id="search" class="search-input" placeholder="Search by title" @bind="searchQuery">
+    </div>
+
+    <div class="filter-buttons">
+        <button class="search-button" @onclick="ApplyFiltersAndSorts">Search</button>
+        <button class="reload-button" @onclick="ReloadPage">Reload</button>
+        <button class="add-button" @onclick="NavigateToAddTransaction">Add New</button>
+    </div>
 </div>
 
 <table class="transactions-table">
@@ -30,20 +60,29 @@
             <th>TITLE</th>
             <th>AMOUNT</th>
             <th>TYPE</th>
-            <th>TAGS</th>
+            <th>CATEGORY</th>
             <th>NOTES</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var transaction in filteredTransactions)
+        @if (filteredTransactions.Any())
+        {
+            @foreach (var transaction in filteredTransactions)
+            {
+                <tr>
+                    <td>@transaction.Date.ToShortDateString()</td>
+                    <td>@transaction.Title</td>
+                    <td class="amount">@transaction.Amount.ToString("C")</td>
+                    <td class="@transaction.Type.ToLower()">@transaction.Type</td>
+                    <td>@string.Join(", ", transaction.Category)</td>
+                    <td>@transaction.Notes</td>
+                </tr>
+            }
+        }
+        else
         {
             <tr>
-                <td>@transaction.Date.ToShortDateString()</td>
-                <td>@transaction.Title</td>
-                <td class="amount">@transaction.Amount.ToString("C")</td>
-                <td class="@transaction.Type.ToLower()">@transaction.Type</td>
-                <td>@string.Join(", ", transaction.Category)</td>
-                <td>@transaction.Notes</td>
+                <td colspan="6" class="no-records">No transactions found.</td>
             </tr>
         }
     </tbody>
@@ -53,48 +92,64 @@
     .transactions-title {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         text-align: center;
     }
 
     .filter-container {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1rem;
-        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .date-input,
-    .type-filter,
-    .search-input {
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 200px;
+    }
+
+    .dropdown, .date-input, .search-input {
         padding: 0.5rem;
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
         border-radius: 4px;
+        font-size: 1rem;
+        margin-top: 0.25rem;
     }
 
-    .add-button {
+    .filter-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .search-button, .reload-button, .add-button {
         background-color: #6c63ff;
-        color: #fff;
+        color: white;
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         cursor: pointer;
         font-weight: bold;
+        font-size: 1rem;
     }
 
-        .add-button:hover {
+        .search-button:hover, .reload-button:hover, .add-button:hover {
             background-color: #574bff;
         }
 
     .transactions-table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 1rem;
     }
 
-        .transactions-table th,
-        .transactions-table td {
+        .transactions-table th, .transactions-table td {
             border: 1px solid #ddd;
             padding: 0.75rem;
             text-align: left;
@@ -127,29 +182,99 @@
         color: red;
         font-weight: bold;
     }
+
+    .no-records {
+        text-align: center;
+        font-style: italic;
+        color: gray;
+    }
 </style>
 
-
 @code {
-    private List<TransactionItems> filteredTransactions;
+    private List<TransactionItems> filteredTransactions = new();
+    private List<TransactionItems> allTransactions = new();
+    private List<string> categories = new();
     private string currentUserEmail;
 
-    protected override async Task OnInitializedAsync()
-{
-    // Retrieve the logged-in user's email from the AuthenticationStateService
-    currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
+    // Filter inputs
+    private DateTime? startDate;
+    private DateTime? endDate;
+    private string selectedType = "all";
+    private string selectedCategory = "all";
+    private string sortOrder = "latest";
+    private string searchQuery = string.Empty;
 
-    // Ensure the email is valid before proceeding
-    if (!string.IsNullOrEmpty(currentUserEmail))
+    protected override async Task OnInitializedAsync()
     {
-        filteredTransactions = transactionService.GetUserTransactions(currentUserEmail);
+        currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
+
+        if (!string.IsNullOrEmpty(currentUserEmail))
+        {
+            allTransactions = transactionService.GetUserTransactions(currentUserEmail);
+            categories = transactionService.GetTransactionCategories(currentUserEmail);
+            ReloadPage();
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/login");
+        }
     }
-    else
+
+    private void ApplyFiltersAndSorts()
     {
-        // Handle the case where no user is logged in
-        NavigationManager.NavigateTo("/login");
+        filteredTransactions = allTransactions;
+
+        // Filter by date range
+        if (startDate.HasValue)
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Date >= startDate.Value).ToList();
+        }
+
+        if (endDate.HasValue)
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Date <= endDate.Value).ToList();
+        }
+
+        // Filter by type
+        if (selectedType != "all")
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Type.Equals(selectedType, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        // Filter by category
+        if (selectedCategory != "all")
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Category.Contains(selectedCategory)).ToList();
+        }
+
+        // Search by title
+        if (!string.IsNullOrEmpty(searchQuery))
+        {
+            filteredTransactions = filteredTransactions.Where(t => t.Title.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        // Sort by date
+        if (sortOrder == "latest")
+        {
+            filteredTransactions = filteredTransactions.OrderByDescending(t => t.Date).ToList();
+        }
+        else if (sortOrder == "oldest")
+        {
+            filteredTransactions = filteredTransactions.OrderBy(t => t.Date).ToList();
+        }
     }
-}
+
+    private void ReloadPage()
+    {
+        // Reset all filters and load the original list
+        startDate = null;
+        endDate = null;
+        selectedType = "all";
+        selectedCategory = "all";
+        sortOrder = "latest";
+        searchQuery = string.Empty;
+        filteredTransactions = allTransactions;
+    }
 
     private void NavigateToAddTransaction()
     {
