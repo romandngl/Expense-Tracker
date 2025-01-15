@@ -1,35 +1,35 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css",
       "PackagePath": "staticwebassets\\ExpensesTracker.styles.css"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\expense.png",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\expense.png",
       "PackagePath": "staticwebassets\\expense.png"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\index.html",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\logo.png",
+      "Id": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\logo.png",
       "PackagePath": "staticwebassets\\logo.png"
     },
     {

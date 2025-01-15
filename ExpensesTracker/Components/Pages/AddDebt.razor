@@ -1,0 +1,178 @@
+@page "/add-debt"
+@using ExpensesTracker.Services
+@inject DebtService debtService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateService authStateService
+
+<h1 class="add-debt-title">Add Debt</h1>
+
+<EditForm Model="newDebt" OnValidSubmit="SaveDebt">
+    <DataAnnotationsValidator />
+
+    <div class="form-container">
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Title </label>
+            <input id="title" type="text" @bind="newDebt.Title" class="input-field" />
+            <ValidationMessage For="() => newDebt.Title" />
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input id="date" type="date" @bind="newDebt.Date" class="input-field" />
+        </div>
+
+        <!-- Amount -->
+        <div class="form-group">
+            <label for="amount">Amount *</label>
+            <input id="amount" type="number" @bind="newDebt.Amount" class="input-field" />
+            <ValidationMessage For="() => newDebt.Amount" />
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" @bind="newDebt.Category" class="dropdown">
+                <option value="">Select a category</option>
+                <option>Loan</option>
+                <option>Mortgage</option>
+                <option>Credit Card</option>
+                <option>Other</option>
+            </select>
+            <ValidationMessage For="() => newDebt.Category" />
+        </div>
+
+        <!-- Source -->
+        <div class="form-group">
+            <label for="source">Source *</label>
+            <input id="source" type="text" @bind="newDebt.Source" class="input-field" />
+            <ValidationMessage For="() => newDebt.Source" />
+        </div>
+
+        <!-- Remarks -->
+        <div class="form-group">
+            <label for="remarks">Remarks</label>
+            <textarea id="remarks" @bind="newDebt.Remarks" class="textarea-field"></textarea>
+        </div>
+
+        <!-- Due Date -->
+        <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input id="dueDate" type="date" @bind="newDebt.DueDate" class="input-field" />
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button type="submit" class="save-button">Save</button>
+            <button type="button" class="cancel-button" @onclick="NavigateToDebtPage">Cancel</button>
+        </div>
+    </div>
+</EditForm>
+
+<style>
+    .add-debt-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .input-field,
+    .dropdown,
+    .textarea-field {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .textarea-field {
+        height: 100px;
+    }
+
+    .button-group {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .save-button {
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .cancel-button {
+        background-color: white;
+        color: #6c63ff;
+        border: 1px solid #6c63ff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+
+@code {
+    private DebtItems newDebt = new DebtItems { Date = DateTime.Now, DueDate = DateTime.Now };
+    private string currentUserEmail;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve the logged-in user's email from the AuthenticationStateService
+        currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
+
+        // Ensure the email is valid before proceeding
+        if (string.IsNullOrEmpty(currentUserEmail))
+        {
+            // Redirect to login page if no user is logged in
+            NavigationManager.NavigateTo("/login");
+        }
+    }
+
+    private void SaveDebt()
+    {
+        if (!string.IsNullOrEmpty(currentUserEmail))
+        {
+            // Add the debt to the service
+            debtService.AddDebt(currentUserEmail, newDebt);
+
+            // Redirect to the debts page
+            NavigationManager.NavigateTo("/debt");
+        }
+        else
+        {
+            // Handle the case where the user's email is not available
+            NavigationManager.NavigateTo("/login");
+        }
+    }
+
+    private void NavigateToDebtPage()
+    {
+        NavigationManager.NavigateTo("/debt");
+    }
+}

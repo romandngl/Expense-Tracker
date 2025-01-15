@@ -21,6 +21,8 @@ namespace ExpensesTracker
             builder.Services.AddSingleton<IUserService, UserService>();
             builder.Services.AddSingleton<AuthenticationStateService>();
             builder.Services.AddSingleton<TransactionService>();
+            builder.Services.AddSingleton<DebtService>();
+
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

@@ -1,0 +1,27 @@
+[
+  {
+    "Email": "ram@gmail.com",
+    "Debts": [
+      {
+        "Id": 1,
+        "Title": "House",
+        "Amount": 1000000,
+        "Category": "Loan",
+        "Source": "Bank",
+        "Remarks": "For property",
+        "Date": "2025-01-16T01:20:21.8415935+05:45",
+        "DueDate": "2025-01-30T00:00:00"
+      },
+      {
+        "Id": 2,
+        "Title": "Car",
+        "Amount": 1500000,
+        "Category": "Loan",
+        "Source": "Friend",
+        "Remarks": "For car",
+        "Date": "2025-01-16T01:25:30.1607097+05:45",
+        "DueDate": "2025-02-09T00:00:00"
+      }
+    ]
+  }
+]

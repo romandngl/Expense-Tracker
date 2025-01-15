@@ -26,13 +26,13 @@
         <NavLink class="nav-link" href="add-debt">
             <span class="@(IsActive("add-debt") ? "active" : "")">Add Debt</span>
         </NavLink>
-    </div>
 
-    <div class="log">
         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-            <span class="@(IsActive("") ? "active" : "")">Log Out</span>
+            <span id="out" class="@(IsActive("") ? "active" : "")">Log Out</span>
         </NavLink>
     </div>
+
+   
 </div>
 
 <style>
@@ -86,7 +86,9 @@
             background-color: #e0e7ff;
         }
 
-       
+    #out{
+        color:red;
+    }
 
     .nav-footer {
         margin-top: auto;
@@ -101,9 +103,7 @@
             background-color: #fee2e2;
         }
 
-    .log{
-        color: red;
-    }
+    
 </style>
 
 @code {
