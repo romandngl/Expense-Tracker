@@ -13,93 +13,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ExpensesTracker
 build_property.RootNamespace = ExpensesTracker
-build_property.ProjectDir = C:\Users\Roman\source\repos\ExpensesTracker\ExpensesTracker\
+build_property.ProjectDir = C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Roman\source\repos\ExpensesTracker\ExpensesTracker
+build_property.MSBuildProjectDirectory = C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/App.xaml]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ExpensesTracker.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/MainPage.xaml]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ExpensesTracker.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Layout/NoneLayout.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Layout/NoneLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTm9uZUxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Pages/AddTransaction.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Pages/AddTransaction.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRUcmFuc2FjdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Pages/AddUser.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Pages/AddUser.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRVc2VyLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Pages/Dashboard.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Pages/Login.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Pages/Transaction.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Pages/Transaction.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUcmFuc2FjdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Routes.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/_Imports.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Layout/MainLayout.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-prvfxiyjrt
 
-[C:/Users/Roman/source/repos/ExpensesTracker/ExpensesTracker/Components/Layout/NavMenu.razor]
+[C:/Users/Roman/source/repos/Expense-Tracker/ExpensesTracker/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==

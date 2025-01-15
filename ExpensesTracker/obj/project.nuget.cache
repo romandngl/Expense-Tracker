@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yy22cVr9WX8=",
+  "dgSpecHash": "kRXT6jsL21U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\ExpensesTracker.csproj",
+  "projectFilePath": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\ExpensesTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roman\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\Roman\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",

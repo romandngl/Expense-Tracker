@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\ExpensesTracker.csproj": {}
+    "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\ExpensesTracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\ExpensesTracker.csproj": {
+    "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\ExpensesTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\ExpensesTracker.csproj",
+        "projectUniqueName": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\ExpensesTracker.csproj",
         "projectName": "ExpensesTracker",
-        "projectPath": "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\ExpensesTracker.csproj",
+        "projectPath": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\ExpensesTracker.csproj",
         "packagesPath": "C:\\Users\\Roman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Roman\\source\\repos\\ExpensesTracker\\ExpensesTracker\\obj\\",
+        "outputPath": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

@@ -1,1 +1,1 @@
-C:\Users\Roman\source\repos\ExpensesTracker\ExpensesTracker\ExpensesTracker.csproj;x64
+C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\ExpensesTracker.csproj;x64
