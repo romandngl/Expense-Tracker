@@ -6,6 +6,10 @@ namespace ExpensesTracker.Services
     public class AuthenticationStateService
     {
         private User authenticatedUser;
+        public Task<string> GetAuthenticatedUserEmailAsync()
+        {
+            return Task.FromResult(authenticatedUser?.Email);
+        }
 
         public User GetAuthenticatedUser()
         {

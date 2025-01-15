@@ -1,6 +1,9 @@
 ﻿@page "/transactions"
+@using ExpensesTracker.Services
 @inject TransactionService transactionService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateService authStateService
+
 
 
 <h1 class="transactions-title">Transactions History</h1>
@@ -129,12 +132,24 @@
 
 @code {
     private List<TransactionItems> filteredTransactions;
-    private string currentUserEmail = "user@example.com";
+    private string currentUserEmail;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
+{
+    // Retrieve the logged-in user's email from the AuthenticationStateService
+    currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
+
+    // Ensure the email is valid before proceeding
+    if (!string.IsNullOrEmpty(currentUserEmail))
     {
         filteredTransactions = transactionService.GetUserTransactions(currentUserEmail);
     }
+    else
+    {
+        // Handle the case where no user is logged in
+        NavigationManager.NavigateTo("/login");
+    }
+}
 
     private void NavigateToAddTransaction()
     {

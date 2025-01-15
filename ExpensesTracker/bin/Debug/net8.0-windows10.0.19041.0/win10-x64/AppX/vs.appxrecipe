@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-15T10:33:23.620</Modified>
+      <Modified>2025-01-15T11:42:45.779</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.dll">
       <PackagePath>ExpensesTracker.dll</PackagePath>
-      <Modified>2025-01-15T10:11:25.658</Modified>
+      <Modified>2025-01-15T11:42:45.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>ExpensesTracker.exe</PackagePath>
-      <Modified>2025-01-15T10:11:25.690</Modified>
+      <Modified>2025-01-15T11:42:45.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

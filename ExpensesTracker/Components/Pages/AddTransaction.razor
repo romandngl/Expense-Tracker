@@ -1,6 +1,9 @@
 @page "/add-transaction"
+@using ExpensesTracker.Services
 @inject TransactionService transactionService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateService authStateService
+
 
 <h1 class="add-transaction-title">Add Transactions</h1>
 
@@ -153,17 +156,36 @@
 
 @code {
     private TransactionItems newTransaction = new TransactionItems { Date = DateTime.Now };
-    private string currentUserEmail = "user@example.com";
+    private string currentUserEmail;
 
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve the logged-in user's email from the AuthenticationStateService
+        currentUserEmail = await authStateService.GetAuthenticatedUserEmailAsync();
+
+        // Ensure the email is valid before proceeding
+        if (string.IsNullOrEmpty(currentUserEmail))
+        {
+            // Redirect to login page if no user is logged in
+            NavigationManager.NavigateTo("/login");
+        }
+    }
 
     private void SaveTransaction()
     {
+        if (!string.IsNullOrEmpty(currentUserEmail))
+        {
+            // Add the transaction to the service
+            transactionService.AddTransaction(currentUserEmail, newTransaction);
 
-        // Add the transaction to the service
-        transactionService.AddTransaction(currentUserEmail, newTransaction);
-
-        // Redirect to the transactions page
-        NavigationManager.NavigateTo("/transactions");
+            // Redirect to the transactions page
+            NavigationManager.NavigateTo("/transactions");
+        }
+        else
+        {
+            // Handle the case where the user's email is not available
+            NavigationManager.NavigateTo("/login");
+        }
     }
 
     private void NavigateToTransactions()
@@ -171,3 +193,4 @@
         NavigationManager.NavigateTo("/transactions");
     }
 }
+
