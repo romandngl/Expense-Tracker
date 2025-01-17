@@ -9,25 +9,7 @@ public class TransactionItems
     private bool _isDebit;
     private bool _isCredit;
 
-    public bool IsDebit
-    {
-        get => _isDebit;
-        set
-        {
-            _isDebit = value;
-            if (_isDebit) IsCredit = false; // Automatically uncheck Credit
-        }
-    }
-
-    public bool IsCredit
-    {
-        get => _isCredit;
-        set
-        {
-            _isCredit = value;
-            if (_isCredit) IsDebit = false; // Automatically uncheck Debit
-        }
-    }
+    
 
     [Required(ErrorMessage = "Title is required.")]
     public string Title { get; set; }
@@ -42,10 +24,32 @@ public class TransactionItems
 
     public string Notes { get; set; }
 
-    public string Type => IsCredit ? "Credit" : (IsDebit ? "Debit" : "Unknown");
+    private string _type;
+    public string Type
+    {
+        get => IsCredit ? "Credit" : (IsDebit ? "Debit" : _type ?? "Unknown");
+        set
+        {
+            _type = value;
+
+            // Optionally update IsCredit and IsDebit based on the set value
+            IsCredit = value.Equals("Credit", StringComparison.OrdinalIgnoreCase);
+            IsDebit = value.Equals("Debit", StringComparison.OrdinalIgnoreCase);
+        }
+    }
+
+    public bool IsCredit { get; set; }
+    public bool IsDebit { get; set; }
+    public string UserEmail { get; internal set; }
 }
 public class UserTransactions
 {
+    [Key]
+    public int Id { get; set; }
     public string Email { get; set; }  // Unique identifier for the user
     public List<TransactionItems> Transactions { get; set; } = new List<TransactionItems>();
+    public string Type { get; set; }
+    public decimal Amount { get; set; }
+    public DateTime Date { get; set; } = DateTime.Now;
+
 }

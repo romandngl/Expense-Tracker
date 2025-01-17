@@ -242,9 +242,13 @@
         }
 
         // Filter by category
+        // Filter by category
         if (selectedCategory != "all")
         {
-            filteredTransactions = filteredTransactions.Where(t => t.Category.Contains(selectedCategory)).ToList();
+            filteredTransactions = filteredTransactions.Where(t =>
+                t.Category != null &&
+                t.Category.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
         }
 
         // Search by title

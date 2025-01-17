@@ -9,6 +9,7 @@
     ".NETCoreApp,Version=v8.0/win10-x64": {
       "ExpensesTracker/1.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Components.Authorization": "7.0.0",
           "Microsoft.AspNetCore.Components.WebView.Maui": "8.0.82",
           "Microsoft.Extensions.Logging.Debug": "8.0.0",
           "Microsoft.Maui.Controls": "8.0.82",
@@ -57,6 +58,18 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/8.0.0": {},
+      "Microsoft.AspNetCore.Components.Authorization/7.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "8.0.0",
+          "Microsoft.AspNetCore.Components": "8.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51819"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/8.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "8.0.0"
@@ -687,6 +700,13 @@
       "sha512": "sha512-lJMa9kQDw3vkqcMMbuicIpyax7QH6imQFbLRzVqJzrGs5LN954IPaJVkDzRCEXFVAN24Cml6g4mEF3b0D7Oa+Q==",
       "path": "microsoft.aspnetcore.components.analyzers/8.0.0",
       "hashPath": "microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9YmIsHP+YRhTSsvHcuQkbk5LO322rj4vYgtBulp1UPfhak/cjnmnqAu6Lu7D4ayzAlEEC4KaR86PZjz8PKOWPA==",
+      "path": "microsoft.aspnetcore.components.authorization/7.0.0",
+      "hashPath": "microsoft.aspnetcore.components.authorization.7.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/8.0.0": {
       "type": "package",

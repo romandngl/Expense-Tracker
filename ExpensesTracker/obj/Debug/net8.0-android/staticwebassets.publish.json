@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uEe5Pn0RBKsfUpXfNjJKk5PrPHCTp03DZQOwRgENtUw=",
+  "Hash": "LJFeIlL7qA2T7TYeKxByGfUYcelXm/+gSNFUnf8qQoQ=",
   "Source": "ExpensesTracker",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "ExpensesTracker\\wwwroot",
       "Source": "ExpensesTracker",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css",
       "SourceId": "ExpensesTracker",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "ExpensesTracker.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\ExpensesTracker.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\ExpensesTracker.bundle.scp.css",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\ExpensesTracker.bundle.scp.css",
       "SourceId": "ExpensesTracker",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "ExpensesTracker.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\ExpensesTracker.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\ExpensesTracker.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\app.css",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\expense.png",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\expense.png",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "expense.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\expense.png"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\favicon.png",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\index.html",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\logo.png",
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\logo.png",
       "SourceId": "ExpensesTracker",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Roman\\Source\\Repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "logo.png",
       "AssetKind": "All",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\user.png",
+      "SourceId": "ExpensesTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Roman\\source\\repos\\Expense-Tracker\\ExpensesTracker\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "user.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user.png"
     }
   ]
 }

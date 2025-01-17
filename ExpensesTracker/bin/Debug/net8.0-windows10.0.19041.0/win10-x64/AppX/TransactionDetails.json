@@ -1,78 +1,176 @@
 [
   {
+    "Id": 0,
     "Email": "ram@gmail.com",
     "Transactions": [
       {
         "Id": 1,
-        "IsDebit": true,
-        "IsCredit": false,
         "Title": "EMI",
         "Date": "2025-01-15T17:28:07.7822546+05:45",
         "Amount": 5000,
         "Category": "Utilities",
         "Notes": "EMKI",
-        "Type": "Debit"
+        "Type": "Debit",
+        "IsCredit": false,
+        "IsDebit": true,
+        "UserEmail": null
       },
       {
         "Id": 2,
-        "IsDebit": false,
-        "IsCredit": true,
         "Title": "Salary",
         "Date": "2025-01-15T20:06:33.7751661+05:45",
         "Amount": 2000000,
         "Category": "Utilities",
         "Notes": "Salary ",
-        "Type": "Credit"
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
       },
       {
         "Id": 3,
-        "IsDebit": false,
-        "IsCredit": true,
         "Title": "Interest",
         "Date": "2025-01-14T00:00:00",
         "Amount": 5000,
         "Category": "Utilities",
         "Notes": "Interest from Fixed deposit",
-        "Type": "Credit"
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
       },
       {
         "Id": 4,
-        "IsDebit": true,
-        "IsCredit": false,
         "Title": "Rent",
         "Date": "2025-01-12T00:00:00",
         "Amount": 10000,
         "Category": "Rent",
         "Notes": "Ghar bhada",
-        "Type": "Debit"
+        "Type": "Debit",
+        "IsCredit": false,
+        "IsDebit": true,
+        "UserEmail": null
       },
       {
         "Id": 5,
-        "IsDebit": true,
-        "IsCredit": false,
         "Title": "Fuel",
         "Date": "2025-01-06T00:00:00",
         "Amount": 1500,
         "Category": "Transportation",
         "Notes": "Petrol",
-        "Type": "Debit"
-      }  
-    ]
+        "Type": "Debit",
+        "IsCredit": false,
+        "IsDebit": true,
+        "UserEmail": null
+      },
+      {
+        "Id": 6,
+        "Title": "Salary",
+        "Date": "2025-01-16T11:55:37.9388154+05:45",
+        "Amount": 12000,
+        "Category": "Utilities",
+        "Notes": "Salary",
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
+      },
+      {
+        "Id": 7,
+        "Title": "Lunch",
+        "Date": "2025-01-16T16:23:26.7341892+05:45",
+        "Amount": 200,
+        "Category": "Food",
+        "Notes": "lunch",
+        "Type": "Debit",
+        "IsCredit": false,
+        "IsDebit": true,
+        "UserEmail": null
+      },
+      {
+        "Id": 8,
+        "Title": "Salary",
+        "Date": "2025-01-16T16:24:00.8003548+05:45",
+        "Amount": 20000,
+        "Category": "Utilities",
+        "Notes": "saf",
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
+      },
+      {
+        "Id": 9,
+        "Title": "Salary",
+        "Date": "2025-01-16T19:57:26.2889371+05:45",
+        "Amount": 500,
+        "Category": "Rent",
+        "Notes": "dvd",
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
+      },
+      {
+        "Id": 10,
+        "Title": "Salary",
+        "Date": "2025-01-16T21:17:54.2758788+05:45",
+        "Amount": 5000,
+        "Category": null,
+        "Notes": "salary",
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
+      },
+      {
+        "Id": 11,
+        "Title": "Salary",
+        "Date": "2025-01-16T21:51:46.1218372+05:45",
+        "Amount": 20000,
+        "Category": "Utilities",
+        "Notes": "jgv",
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
+      },
+      {
+        "Id": 12,
+        "Title": "Fuel",
+        "Date": "2025-01-17T06:49:10.7684535+05:45",
+        "Amount": 300,
+        "Category": "Transportation",
+        "Notes": "petrol",
+        "Type": "Debit",
+        "IsCredit": false,
+        "IsDebit": true,
+        "UserEmail": null
+      }
+    ],
+    "Type": null,
+    "Amount": 0,
+    "Date": "2025-01-16T19:57:39.5034565+05:45"
   },
   {
+    "Id": 0,
     "Email": "romandngl121@gmail.com",
     "Transactions": [
       {
         "Id": 1,
-        "IsDebit": false,
-        "IsCredit": true,
         "Title": "Salary",
         "Date": "2025-01-15T17:29:26.7330306+05:45",
         "Amount": 10000,
         "Category": "Utilities",
         "Notes": "dfds",
-        "Type": "Credit"
+        "Type": "Credit",
+        "IsCredit": true,
+        "IsDebit": false,
+        "UserEmail": null
       }
-    ]
+    ],
+    "Type": null,
+    "Amount": 0,
+    "Date": "2025-01-16T19:57:39.5060471+05:45"
   }
 ]

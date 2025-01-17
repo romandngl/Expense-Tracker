@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>com.companyname.expensestracker</PackageIdentityName>
     <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>
     </WindowsSdkPath>
-    <LayoutDir>C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>FCBFE86514166029C4D809AB2B4E88E5252EC04C618154FCF1D0BAA2EA484832</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>com.companyname.expensestracker_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>com.companyname.expensestracker_9zz4h110yvjzm!App</RegisteredUserModeAppID>
@@ -27,292 +27,296 @@
     <RegisteredVersion>1.0.0.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-15T20:56:54.041</Modified>
+      <Modified>2025-01-17T01:17:54.065</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-15T08:00:33.457</Modified>
+      <Modified>2025-01-16T09:48:23.230</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.runtimeconfig.json">
       <PackagePath>ExpensesTracker.runtimeconfig.json</PackagePath>
-      <Modified>2025-01-15T09:03:36.570</Modified>
+      <Modified>2025-01-16T11:04:04.702</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.dll">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.dll">
       <PackagePath>ExpensesTracker.dll</PackagePath>
-      <Modified>2025-01-15T20:56:53.847</Modified>
+      <Modified>2025-01-17T01:17:53.843</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>ExpensesTracker.exe</PackagePath>
-      <Modified>2025-01-15T20:56:53.853</Modified>
+      <Modified>2025-01-17T01:17:53.843</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\Resources\Raw\AboutAssets.txt">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2025-01-15T07:59:46.473</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\css\app.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\css\bootstrap\bootstrap.min.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\css\bootstrap\bootstrap.min.css.map">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\expense.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\expense.png">
       <PackagePath>wwwroot\expense.png</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\favicon.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\index.html">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\wwwroot\logo.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\logo.png">
       <PackagePath>wwwroot\logo.png</PackagePath>
       <Modified>2025-01-15T07:59:48.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\wwwroot\user.png">
+      <PackagePath>wwwroot\user.png</PackagePath>
+      <Modified>2025-01-16T09:47:00.500</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
       <Modified>2025-01-15T07:59:48.074</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.102</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
       <Modified>2025-01-15T08:00:01.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.deps.json">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ExpensesTracker.deps.json">
       <PackagePath>ExpensesTracker.deps.json</PackagePath>
-      <Modified>2025-01-15T09:03:36.351</Modified>
+      <Modified>2025-01-16T11:04:04.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Roman\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -329,6 +333,10 @@
     <AppxPackagedFile Include="C:\Users\Roman\.nuget\packages\microsoft.aspnetcore.components\8.0.0\lib\net8.0\Microsoft.AspNetCore.Components.dll">
       <PackagePath>Microsoft.AspNetCore.Components.dll</PackagePath>
       <Modified>2023-11-01T01:06:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Roman\.nuget\packages\microsoft.aspnetcore.components.authorization\7.0.0\lib\net7.0\Microsoft.AspNetCore.Components.Authorization.dll">
+      <PackagePath>Microsoft.AspNetCore.Components.Authorization.dll</PackagePath>
+      <Modified>2022-10-19T06:09:12.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Roman\.nuget\packages\microsoft.aspnetcore.components.forms\8.0.0\lib\net8.0\Microsoft.AspNetCore.Components.Forms.dll">
       <PackagePath>Microsoft.AspNetCore.Components.Forms.dll</PackagePath>
@@ -678,19 +686,19 @@
       <PackagePath>Microsoft.Maui.pri</PackagePath>
       <Modified>2024-08-26T17:04:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\ExpensesTracker.styles.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\ExpensesTracker.styles.css">
       <PackagePath>wwwroot\ExpensesTracker.styles.css</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\ExpensesTracker.bundle.scp.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\ExpensesTracker.bundle.scp.css">
       <PackagePath>wwwroot\ExpensesTracker.bundle.scp.css</PackagePath>
       <Modified>2025-01-15T07:59:48.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\Components\Layout\MainLayout.razor.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
       <Modified>2025-01-15T07:59:46.457</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Roman\Source\Repos\Expense-Tracker\ExpensesTracker\Components\Layout\NavMenu.razor.css">
+    <AppxPackagedFile Include="C:\Users\Roman\source\repos\Expense-Tracker\ExpensesTracker\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
       <Modified>2025-01-15T07:59:46.457</Modified>
     </AppxPackagedFile>

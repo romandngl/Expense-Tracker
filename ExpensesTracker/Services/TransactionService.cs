@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpensesTracker.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,10 +9,14 @@ public class TransactionService
 {
     private readonly string FilePath = Path.Combine(AppContext.BaseDirectory, "TransactionDetails.json");
 
+    // Event to notify listeners of transaction changes
+    public event Action OnTransactionsChanged;
+
     // Load transactions from JSON
-    public List<UserTransactions> LoadTransactions()
+    public List<UserTransactions> LoadTransactions(string email)
     {
         if (!File.Exists(FilePath))
+
         {
             return new List<UserTransactions>();
         }
@@ -30,7 +35,7 @@ public class TransactionService
     // Add a new transaction for a user
     public void AddTransaction(string email, TransactionItems newTransaction)
     {
-        var transactions = LoadTransactions();
+        var transactions = LoadTransactions(email);
 
         // Find existing user transactions or create a new entry
         var userTransaction = transactions.Find(ut => ut.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
@@ -52,7 +57,7 @@ public class TransactionService
     // Get all transactions for a user by email
     public List<TransactionItems> GetUserTransactions(string email)
     {
-        var transactions = LoadTransactions();
+        var transactions = LoadTransactions(email);
         var userTransaction = transactions.Find(ut => ut.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
         return userTransaction?.Transactions ?? new List<TransactionItems>();
     }
@@ -124,4 +129,58 @@ public class TransactionService
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
     }
+
+    internal async Task<IEnumerable<UserTransactions>> LoadTransactionsAsync(string email)
+{
+    // Define the path to your JSON file
+    string filePath = Path.Combine(AppContext.BaseDirectory, "TransactionDetails.json");
+
+    // Read the JSON file asynchronously
+    using FileStream stream = File.OpenRead(filePath);
+    
+    // Deserialize the JSON content into a list of Transaction objects
+    var transactions = await JsonSerializer.DeserializeAsync<List<UserTransactions>>(stream);
+
+    // Filter transactions by the provided email (if needed)
+    var userTransactions = transactions.Where(t => t.Email == email);
+
+    return userTransactions;
+}
+
+    internal async Task<List<TransactionItems>> GetTopTransactionsAsync(string email)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<List<TransactionItems>> GetTransactionsAsync(string email)
+    {
+        try
+        {
+            return await Task.Run(() => GetUserTransactions(email));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in GetTransactionsAsync: {ex.Message}");
+            throw; // Re-throw to propagate if necessary
+        }
+    }
+    // Get total inflows (credits) for a user
+    public decimal GetTotalInflows(string email)
+    {
+        var transactions = GetUserTransactions(email);
+        return transactions
+            .Where(t => t.Type.Equals("Credit", StringComparison.OrdinalIgnoreCase))
+            .Sum(t => t.Amount);
+    }
+
+    // Get total outflows (debits) for a user
+    public decimal GetTotalOutflows(string email)
+    {
+        var transactions = GetUserTransactions(email);
+        return transactions
+            .Where(t => t.Type.Equals("Debit", StringComparison.OrdinalIgnoreCase))
+            .Sum(t => t.Amount);
+    }
+
+
 }

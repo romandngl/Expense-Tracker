@@ -22,6 +22,15 @@ namespace ExpensesTracker
             builder.Services.AddSingleton<AuthenticationStateService>();
             builder.Services.AddSingleton<TransactionService>();
             builder.Services.AddSingleton<DebtService>();
+            builder.Services.AddScoped<TransactionService>();
+            builder.Services.AddScoped<DebtService>();
+            builder.Services.AddSingleton<DashboardService>();
+
+            
+
+
+
+
 
 
 #if DEBUG

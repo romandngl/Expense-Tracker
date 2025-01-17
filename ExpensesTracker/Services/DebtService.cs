@@ -70,5 +70,44 @@ public class DebtService
             SaveDebts(userEmail, debts);
         }
     }
-}
 
+    // Get the total debt for a user
+    public decimal GetTotalDebt(string Email)
+    {
+        var debts = LoadDebts(Email);
+        return debts.Sum(d => d.Amount);
+    }
+
+    // Get the total cleared debt for a user
+    public decimal GetClearedDebt(string Email)
+    {
+        var debts = LoadDebts(Email);
+        return debts.Where(d => d.IsCleared).Sum(d => d.Amount);
+    }
+
+    // Get the total pending debt for a user
+    public List<DebtItems> GetPendingDebt(string email)
+    {
+        var debts = LoadDebts(email);
+        return debts.Where(debt => !debt.IsCleared).ToList();
+    }
+
+    internal async Task<IEnumerable<UserDebts>> LoadDebtsAsync(string email)
+    {
+        // Define the path to your JSON file
+        string filePath = Path.Combine(AppContext.BaseDirectory, "DebtDetails.json");
+
+        // Read the JSON file asynchronously
+        using FileStream stream = File.OpenRead(filePath);
+
+        // Deserialize the JSON content into a list of Debt objects
+        var debts = await JsonSerializer.DeserializeAsync<List<UserDebts>>(stream);
+
+        // Filter debts by the provided email (if needed)
+        var userDebts = debts.Where(d => d.Email == email);
+
+        return userDebts;
+    }
+
+    
+}

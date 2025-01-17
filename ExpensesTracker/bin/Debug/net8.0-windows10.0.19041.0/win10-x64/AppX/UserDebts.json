@@ -1,21 +1,16 @@
 [
   {
     "Email": "ram@gmail.com",
-    "Debts": [
-      {
-        "Id": 0,
-        "Title": "House",
-        "Amount": 1000000,
-        "Category": "Loan",
-        "Source": "Bank",
-        "Remarks": "Property Loan",
-        "Date": "2025-01-12T00:00:00",
-        "DueDate": "2025-02-17T00:00:00"
-      }
-    ]
+    "Id": 0,
+    "Debts": [],
+    "Amount": 0,
+    "IsCleared": false,
+    "DueDate": "0001-01-01T00:00:00",
+    "Remarks": null
   },
   {
     "Email": "romandngl121@gmail.com",
+    "Id": 0,
     "Debts": [
       {
         "Id": 0,
@@ -25,8 +20,13 @@
         "Source": "Bank",
         "Remarks": "Property",
         "Date": "2025-01-14T00:00:00",
-        "DueDate": "2025-03-10T00:00:00"
+        "DueDate": "2025-03-10T00:00:00",
+        "IsCleared": false
       }
-    ]
+    ],
+    "Amount": 0,
+    "IsCleared": false,
+    "DueDate": "0001-01-01T00:00:00",
+    "Remarks": null
   }
 ]
