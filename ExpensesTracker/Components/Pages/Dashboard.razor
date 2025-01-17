@@ -4,36 +4,200 @@
 @inject DashboardService DashboardService
 @inject NavigationManager NavigationManager
 
-<div class="dashboard">
-    <h2>Expense Tracker Dashboard</h2>
-
-    <div class="summary">
-        <div>Total Inflows: @DashboardData.TotalInflows</div>
-        <div>Total Outflows: @DashboardData.TotalOutflows</div>
-        <div>Total Debts: @DashboardData.TotalDebts</div>
-        <div>Cleared Debts: @DashboardData.ClearedDebts</div>
-        <div>Remaining Debts: @DashboardData.RemainingDebts</div>
+<div class="dashboard-container">
+    <div class="welcome-header">
+        <h2>Welcome, User!</h2>
+        <div class="user-profile">
+            <i class="user-icon">👤</i>
+            <span>@UserEmail</span>
+        </div>
     </div>
 
-    <div class="charts">
-        <h3>Transaction Summary</h3>
-        <!-- Add your chart component here -->
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <h3>Total Amount</h3>
+            <p>Rs @(DashboardData.TotalInflows - DashboardData.TotalOutflows)</p>
+        </div>
+        <div class="metric-card">
+            <h3>Total Inflows</h3>
+            <p>Rs @DashboardData.TotalInflows</p>
+        </div>
+        <div class="metric-card">
+            <h3>Total Outflows</h3>
+            <p>@DashboardData.TotalOutflows</p>
+        </div>
+        <div class="metric-card">
+            <h3>Total Debts</h3>
+            <p>Rs @DashboardData.TotalDebts</p>
+        </div>
     </div>
 
-    <div class="pending-debts">
-        <h3>Pending Debts</h3>
-        <ul>
-            @foreach (var debt in DashboardData.PendingDebts)
-            {
-                <li>@debt.Remarks - Due: @debt.DueDate.ToShortDateString() - Amount: @debt.Amount</li>
-            }
-        </ul>
+    <div class="dashboard-content">
+        <div class="money-flow-section">
+            <h3>Money Flow</h3>
+            <div class="money-flow-chart">
+                <!-- Chart placeholder -->
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="top-transactions">
+                <h3>Top 5 Transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var transaction in DashboardData.TopTransactions)
+                        {
+                            <tr class="@(transaction.IsCredit ? "credit" : "debit")">
+                                <td>@transaction.Category</td>
+                                <td>@transaction.Amount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pending-debts">
+                <h3>Pending Debts</h3>
+                <div class="debts-list">
+                    @foreach (var debt in DashboardData.PendingDebts)
+                    {
+                        <div class="debt-item">
+                            <span>@debt.Remarks</span>
+                            <span>Rs @debt.Amount</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<style>
+    .dashboard-container {
+        padding: 2rem;
+        background-color: #f8f9fa;
+    }
+
+    .welcome-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f0f0f0;
+        border-radius: 2rem;
+    }
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .metric-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .metric-card h3 {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .metric-card p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .dashboard-content {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 1.5rem;
+    }
+
+    .money-flow-section {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .money-flow-chart {
+        height: 300px;
+        background: #f8f9fa;
+        border-radius: 0.5rem;
+    }
+
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .top-transactions, .pending-debts {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .top-transactions table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .top-transactions th, .top-transactions td {
+        padding: 0.75rem;
+        text-align: left;
+    }
+
+    .top-transactions tr.credit {
+        background-color: #e8f5e9;
+    }
+
+    .top-transactions tr.debit {
+        background-color: #ffebee;
+    }
+
+    .debts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .debt-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.1rem;
+    }
+</style>
+
 @code {
     private DashboardModel DashboardData { get; set; } = new DashboardModel();
-    private string UserEmail { get; set; } = "ram@gmail.com";  // Placeholder email. Adjust as needed.
+    private string UserEmail { get; set; } = "ram@gmail.com";  
 
     protected override async Task OnInitializedAsync()
     {

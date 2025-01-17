@@ -26,7 +26,7 @@ namespace ExpensesTracker
             builder.Services.AddScoped<DebtService>();
             builder.Services.AddSingleton<DashboardService>();
 
-            
+
 
 
 

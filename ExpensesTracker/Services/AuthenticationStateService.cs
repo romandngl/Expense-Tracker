@@ -35,4 +35,5 @@ namespace ExpensesTracker.Services
             authenticatedUser = null;
         }
     }
+
 }
